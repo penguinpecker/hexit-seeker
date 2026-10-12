@@ -1,0 +1,23 @@
+{
+  "railwayProject": "054c90fd-1b77-44f2-a7ba-d9574cc448d7",
+  "railwayService": "d0c028ae-7c98-407e-9906-a8dd692dca08",
+  "railwayDatabase": "e5cc91be-2e92-4af6-bb7c-11f22fd76446",
+  "api": "https://hexit-leaderboard-production.up.railway.app",
+  "cluster": "mainnet-beta",
+  "feeLamports": 10000000,
+  "feeTreasury": "6zuPtQg1rygxNgzZmjn13YB3bqMGiMLbPAWbrbvwJykg",
+  "gameMode": "virtual",
+  "gameCurrency": "VC",
+  "starterCredits": 100,
+  "version": "0.3.1",
+  "marketData": "live",
+  "marketSources": [
+    "Coinbase",
+    "Kraken"
+  ],
+  "website": "https://digitalchocolate.co/hexit/",
+  "supportEmail": "digitalchocolate@gmail.com",
+  "railwayDeployment": "bbb1ff2b-588d-40fc-8fe4-4c3e41af5806",
+  "privacy": "https://digitalchocolate.co/hexit/legal/privacy.html",
+  "terms": "https://digitalchocolate.co/hexit/legal/terms.html"
+}

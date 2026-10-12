@@ -1,0 +1,59 @@
+plugins { id 'com.android.application' }
+
+def signingFile = rootProject.file('../keys/release.properties')
+def signing = new Properties()
+if (signingFile.exists()) signingFile.withInputStream { signing.load(it) }
+def firebaseFields = { target, filename ->
+    def config = new groovy.json.JsonSlurper().parse(file(filename))
+    def client = config.client[0]
+    target.buildConfigField 'String', 'FIREBASE_APP_ID', '"' + client.client_info.mobilesdk_app_id + '"'
+    target.buildConfigField 'String', 'FIREBASE_API_KEY', '"' + client.api_key[0].current_key + '"'
+    target.buildConfigField 'String', 'FIREBASE_PROJECT_ID', '"' + config.project_info.project_id + '"'
+    target.buildConfigField 'String', 'FIREBASE_SENDER_ID', '"' + config.project_info.project_number + '"'
+}
+
+android {
+    namespace 'com.hexit.seeker'
+    compileSdk 35
+    buildToolsVersion '36.0.0'
+    defaultConfig {
+        applicationId 'com.hexit.seeker'
+        minSdk 28
+        targetSdk 35
+        versionCode 4
+        versionName '0.3.1'
+        buildConfigField 'String', 'HEXIT_API', '"https://hexit-leaderboard-production.up.railway.app"'
+        firebaseFields(delegate, 'google-services.json')
+    }
+    buildFeatures { buildConfig true }
+    signingConfigs {
+        if (signingFile.exists()) {
+            release {
+                storeFile rootProject.file('../keys/' + signing.getProperty('storeFile'))
+                storePassword signing.getProperty('storePassword')
+                keyAlias signing.getProperty('keyAlias')
+                keyPassword signing.getProperty('keyPassword')
+            }
+        }
+    }
+    buildTypes {
+        debug { applicationIdSuffix '.debug'; firebaseFields(delegate, 'google-services-debug.json') }
+        release {
+            if (signingFile.exists()) signingConfig signingConfigs.release
+            minifyEnabled false
+            debuggable false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.15.0'
+    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'com.solanamobile:mobile-wallet-adapter-clientlib:2.0.7'
+    implementation platform('com.google.firebase:firebase-bom:34.19.0')
+    implementation 'com.google.firebase:firebase-messaging'
+}

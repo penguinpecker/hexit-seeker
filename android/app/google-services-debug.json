@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "220034932853",
+    "project_id": "hexit-seeker",
+    "storage_bucket": "hexit-seeker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220034932853:android:731753126cfc40b82a983c",
+        "android_client_info": {
+          "package_name": "com.hexit.seeker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIAdGMCzAJKq2ORak1-pkUFOINprgqR5I"
+        },
+        {
+          "current_key": "AIzaSyCzFHrkhqbfeqICwXsvQcob0ijTqSUxETY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220034932853:android:191f1ca10103079f2a983c",
+        "android_client_info": {
+          "package_name": "com.hexit.seeker.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIAdGMCzAJKq2ORak1-pkUFOINprgqR5I"
+        },
+        {
+          "current_key": "AIzaSyCzFHrkhqbfeqICwXsvQcob0ijTqSUxETY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

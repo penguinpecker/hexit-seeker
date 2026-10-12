@@ -1,0 +1,15 @@
+keys/
+android/
+brand/
+deliverables/
+research/
+node_modules/
+pricing/node_modules/
+pricing/dist/
+pricing/test/
+web/dist/
+web/fonts/
+web/icons/
+web/vendor/
+.git/
+firebase-debug.log

@@ -1,0 +1,26 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hexit.seeker",
+      "sha256_cert_fingerprints": [
+        "D3:B3:30:F2:C1:18:35:87:D2:89:64:14:47:75:B5:C2:47:3C:AA:D7:EA:36:3F:36:F2:DF:AC:64:4D:5D:D4:E5"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hexit.seeker.debug",
+      "sha256_cert_fingerprints": [
+        "C9:2E:01:7B:7C:42:4D:B9:DA:97:FC:F2:1E:E1:90:8E:F3:2C:D9:5F:0C:5C:5E:25:DB:1E:09:9F:FA:84:CD:28"
+      ]
+    }
+  }
+]

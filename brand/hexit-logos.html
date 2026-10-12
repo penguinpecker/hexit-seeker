@@ -1,0 +1,138 @@
+<title>Hexit Logo Concepts</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Unbounded:wght@700;900&family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap">
+<style>
+/* Layout: one stacked card per concept; each card = hero lockup, app icon, size ladder, light-ground proof. Kaboom deep-purple world, single dark look. */
+:root{
+  color-scheme:dark;
+  --bg:#12042a; --card:#1b0639; --well:#160234; --raise:#281546; --line-soft:rgba(208,188,255,.12);
+  --text:#ecdcff; --muted:#c1c7d3; --dim:#8b919d;
+  --lav:#d0bcff; --ice:#a4c9ff; --mag:#f26aff; --amber:#fbbf24; --emerald:#34d399;
+  --paper:#f5f0fb; --paper-ink:#1b0639;
+  --f-head:"Space Grotesk","Arial Narrow",system-ui,sans-serif; --f-body:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-body);font-size:14px;-webkit-font-smoothing:antialiased}
+main{max-width:1080px;margin:0 auto;padding-block:40px 64px;padding-inline:20px;display:grid;gap:28px}
+header{display:grid;gap:8px}
+.eyebrow{font-family:var(--f-head);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:0;font-family:var(--f-head);font-style:italic;font-weight:700;font-size:clamp(34px,6vw,56px);letter-spacing:-.03em;line-height:.95;text-transform:uppercase}
+h1 span{color:var(--mag)}
+header p{margin:0;color:var(--muted);max-width:62ch;line-height:1.55}
+.card{background:var(--card);border:1px solid var(--line-soft);clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);}
+.hero{padding:36px 32px;display:grid;gap:22px;align-content:start;background:radial-gradient(70% 90% at 25% 40%,rgba(87,27,193,.35),transparent 70%)}
+.lockup{display:flex;align-items:center;gap:18px;flex-wrap:wrap;min-height:130px}
+.lockup svg{width:112px;height:112px;flex:none}
+.word{font-size:clamp(48px,8vw,76px);line-height:1;letter-spacing:-.02em}
+.meta{display:grid;gap:6px}
+.meta h2{margin:0;font-family:var(--f-head);font-weight:700;font-size:20px;font-style:italic;text-transform:uppercase;letter-spacing:-.01em}
+.meta p{margin:0;color:var(--muted);line-height:1.55;max-width:56ch}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--f-head);font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lav);background:var(--raise);padding:5px 9px;border-radius:2px}
+.side{background:var(--well);border-left:1px solid var(--line-soft);padding:28px 24px;display:grid;gap:20px;align-content:start}
+.side .eyebrow{margin-bottom:-8px}
+.icons{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.icon{display:grid;place-items:center;background:linear-gradient(160deg,#2a1150,#1b0639 60%);border-radius:22%;box-shadow:inset 0 0 0 1px rgba(208,188,255,.14),0 10px 30px rgba(0,0,0,.4)}
+.icon svg{width:72%;height:72%}
+.i120{width:120px;height:120px} .i64{width:64px;height:64px} .i40{width:40px;height:40px} .i24{width:24px;height:24px;border-radius:6px}
+.paper{background:var(--paper);color:var(--paper-ink);padding:18px;display:flex;align-items:center;gap:12px;border-radius:2px}
+.paper svg{width:52px;height:52px;flex:none}
+.paper .word{font-size:36px}
+/* per-concept mark colours */
+.dark1{--line:#d0bcff;--fuse:#f26aff;--spark:#fbbf24;--core:#fff}
+.light1{--line:#571bc1;--fuse:#d21fe8;--spark:#f59e0b;--core:#fff}
+.dark2{--body:#160234;--line:#60a5fa;--shine:rgba(164,201,255,.22);--x:#f26aff;--wick:#c9a43a;--spark:#fbbf24;--core:#fff}
+.light2{--body:#1b0639;--line:#2563eb;--shine:rgba(164,201,255,.3);--x:#f26aff;--wick:#a16207;--spark:#f59e0b;--core:#fff}
+.dark3{--glass:rgba(62,43,92,.55);--line:rgba(208,188,255,.55);--armed:#fbbf24;--ink:#2b1a00;--spark:#f26aff}
+.light3{--glass:rgba(87,27,193,.10);--line:#571bc1;--armed:#f59e0b;--ink:#2b1a00;--spark:#d21fe8}
+/* wordmarks */
+.w1{font-family:var(--f-head);font-weight:700;font-style:italic;text-transform:uppercase}
+.w1 b{color:var(--mag);font-weight:700}
+.paper .w1 b{color:#d21fe8}
+.w2{font-family:Unbounded,var(--f-head);font-weight:900;letter-spacing:-.04em}
+.w2 .i{position:relative;display:inline-block}
+.w2 .i::after{content:"";position:absolute;left:50%;top:-.02em;width:.28em;height:.28em;translate:-50% 0;background:var(--amber);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.w2 .ib{display:inline-block;width:.27em;overflow:hidden;vertical-align:bottom}
+.w3{font-family:Syne,var(--f-head);font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.w3 b{color:var(--amber);font-weight:800}
+.paper .w3 b{color:#b45309}
+.pick{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-head);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#00301e;background:var(--emerald);padding:4px 8px;border-radius:2px;width:max-content}
+@media (max-width:800px){.card{grid-template-columns:1fr}.side{border-left:0;border-top:1px solid var(--line-soft)}.hero{padding:28px 20px}.lockup svg{width:84px;height:84px}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="m1" viewBox="0 0 120 120">
+  <path d="M82 21.9 H38 L16 60 L38 98.1 H82" fill="none" style="stroke:var(--line)" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M30 70 L44 61 L54 68 L67 51 L79 56 L101 35" fill="none" style="stroke:var(--fuse)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="104.00,19.00 105.72,27.84 113.19,22.81 108.16,30.28 117.00,32.00 108.16,33.72 113.19,41.19 105.72,36.16 104.00,45.00 102.28,36.16 94.81,41.19 99.84,33.72 91.00,32.00 99.84,30.28 94.81,22.81 102.28,27.84" style="fill:var(--spark)"/>
+  <circle cx="104" cy="32" r="3.6" style="fill:var(--core)"/>
+</symbol><symbol id="m2" viewBox="0 0 120 120">
+  <polygon points="98.00,66.00 77.00,102.37 35.00,102.37 14.00,66.00 35.00,29.63 77.00,29.63" style="fill:var(--body);stroke:var(--line)" stroke-width="5" stroke-linejoin="round"/>
+  <ellipse cx="42" cy="50" rx="11" ry="6" transform="rotate(-30 42 50)" style="fill:var(--shine)"/>
+  <path d="M43 53 L69 79 M69 53 L43 79" style="stroke:var(--x)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M77 29.6 Q90 18 99 15" fill="none" style="stroke:var(--wick)" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="103.00,1.00 104.53,9.30 111.49,4.51 106.70,11.47 115.00,13.00 106.70,14.53 111.49,21.49 104.53,16.70 103.00,25.00 101.47,16.70 94.51,21.49 99.30,14.53 91.00,13.00 99.30,11.47 94.51,4.51 101.47,9.30" style="fill:var(--spark)"/>
+  <circle cx="103" cy="13" r="3.4" style="fill:var(--core)"/>
+</symbol><symbol id="m3" viewBox="0 0 120 120">
+  <polygon points="63.80,39.22 52.90,58.09 31.10,58.09 20.20,39.22 31.10,20.34 52.90,20.34" style="fill:var(--glass);stroke:var(--line)" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="63.80,80.78 52.90,99.66 31.10,99.66 20.20,80.78 31.10,61.91 52.90,61.91" style="fill:var(--glass);stroke:var(--line)" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="99.80,60.00 88.90,78.88 67.10,78.88 56.20,60.00 67.10,41.12 88.90,41.12" style="fill:var(--armed)" stroke-linejoin="round"/>
+  <path d="M71.0 51.0 L83.0 60.0 L71.0 69.0" fill="none" style="stroke:var(--ink)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="105.00,51.00 106.15,57.23 111.36,53.64 107.77,58.85 114.00,60.00 107.77,61.15 111.36,66.36 106.15,62.77 105.00,69.00 103.85,62.77 98.64,66.36 102.23,61.15 96.00,60.00 102.23,58.85 98.64,53.64 103.85,57.23" style="fill:var(--spark)"/>
+</symbol></defs></svg>
+<main>
+  <header>
+    <span class="eyebrow">Brand exploration // 3 directions</span>
+    <h1>Hex<span>it</span> logo concepts</h1>
+    <p>Three directions for the honeycomb tap-trading app. Each one keeps the Kaboom world (deep purple, magenta fuse, amber armed tile) and is shown as a full lockup, an app icon at store and home-screen sizes, and on a light background.</p>
+  </header>
+
+  <section class="card">
+    <div class="hero dark1">
+      <span class="pick">My pick</span>
+      <div class="lockup"><svg role="img" aria-label="Hexit mark: open hexagon with a fuse escaping"><use href="#m1"/></svg><span class="word w1">He<b>x</b>it</span></div>
+      <div class="meta">
+        <h2>01 · The Exit</h2>
+        <p>A hexagon with its right side blown open, and the price fuse escaping through the gap with a spark at the tip. "Hex" plus "exit" in a single shape, and the motion reads as a price breaking out. It's the simplest of the three and holds up at tiny sizes.</p>
+        <div class="chips"><span class="chip">Space Grotesk italic</span><span class="chip">Lavender · magenta · amber</span><span class="chip">Kaboom voice</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <span class="eyebrow">App icon</span>
+      <div class="icons dark1"><div class="icon i120"><svg><use href="#m1"/></svg></div><div class="icon i64"><svg><use href="#m1"/></svg></div><div class="icon i40"><svg><use href="#m1"/></svg></div><div class="icon i24"><svg><use href="#m1"/></svg></div></div>
+      <span class="eyebrow">On light</span>
+      <div class="paper light1"><svg><use href="#m1"/></svg><span class="word w1">He<b>x</b>it</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="hero dark2">
+      <div class="lockup"><svg role="img" aria-label="Hexit mark: hexagonal bomb with a lit fuse"><use href="#m2"/></svg><span class="word w2">hex<span class="i"><span class="ib">ı</span></span>t</span></div>
+      <div class="meta">
+        <h2>02 · Hex Bomb</h2>
+        <p>The Kaboom bomb, rebuilt as a hexagon: the same ice-blue rim, glossy shine and lit wick, with a magenta "x" (for multiplier) on its face. In the wordmark the dot of the "i" is the spark. It's the most playful direction and the closest relative of the Kaboom brand.</p>
+        <div class="chips"><span class="chip">Unbounded black</span><span class="chip">Ice rim · magenta x</span><span class="chip">Kaboom DNA</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <span class="eyebrow">App icon</span>
+      <div class="icons dark2"><div class="icon i120"><svg><use href="#m2"/></svg></div><div class="icon i64"><svg><use href="#m2"/></svg></div><div class="icon i40"><svg><use href="#m2"/></svg></div><div class="icon i24"><svg><use href="#m2"/></svg></div></div>
+      <span class="eyebrow">On light</span>
+      <div class="paper light2"><svg><use href="#m2"/></svg><span class="word w2">hex<span class="i"><span class="ib">ı</span></span>t</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="hero dark3">
+      <div class="lockup"><svg role="img" aria-label="Hexit mark: three hexagons forming a right-pointing arrow"><use href="#m3"/></svg><span class="word w3">Hex<b>it</b></span></div>
+      <div class="meta">
+        <h2>03 · Comb Arrow</h2>
+        <p>Three honeycomb tiles locked together into a right-pointing arrow. The leading tile is the amber armed hex from the game board, with a play chevron and a magenta spark. It reads as "go" and "exit" at once and is built from the real board geometry. It's the cleanest direction and could fit a fintech brand.</p>
+        <div class="chips"><span class="chip">Syne extra bold</span><span class="chip">Glass tiles · amber lead</span><span class="chip">Board geometry</span></div>
+      </div>
+    </div>
+    <div class="side">
+      <span class="eyebrow">App icon</span>
+      <div class="icons dark3"><div class="icon i120"><svg><use href="#m3"/></svg></div><div class="icon i64"><svg><use href="#m3"/></svg></div><div class="icon i40"><svg><use href="#m3"/></svg></div><div class="icon i24"><svg><use href="#m3"/></svg></div></div>
+      <span class="eyebrow">On light</span>
+      <div class="paper light3"><svg><use href="#m3"/></svg><span class="word w3">Hex<b>it</b></span></div>
+    </div>
+  </section>
+</main>

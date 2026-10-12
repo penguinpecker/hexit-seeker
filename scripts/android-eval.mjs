@@ -1,0 +1,10 @@
+import {execFileSync} from 'node:child_process';
+const adb='/Users/pp/Library/Android/sdk/platform-tools/adb',device='emulator-5582';
+const pid=execFileSync(adb,['-s',device,'shell','pidof','com.hexit.seeker.debug'],{encoding:'utf8'}).trim();
+execFileSync(adb,['-s',device,'forward','tcp:9239','localabstract:webview_devtools_remote_'+pid]);
+const pages=await (await fetch('http://127.0.0.1:9239/json')).json();
+const socket=new WebSocket(pages[0].webSocketDebuggerUrl);
+await new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=reject;});
+socket.send(JSON.stringify({id:1,method:'Runtime.evaluate',params:{expression:process.argv[2]||'window.HexitApp.state()',awaitPromise:true,returnByValue:true,userGesture:true}}));
+const data=await new Promise(resolve=>{socket.onmessage=e=>{const d=JSON.parse(e.data);if(d.id===1)resolve(d);};});
+console.log(JSON.stringify(data.result));socket.close();

@@ -1,0 +1,26 @@
+{
+  "name": "hexit-seeker",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test web/test/*.test.ts",
+    "dev": "node scripts/server.mjs"
+  },
+  "dependencies": {
+    "@dicebear/bottts": "9.4.3",
+    "@dicebear/core": "9.4.3",
+    "bs58": "6.0.0",
+    "pg": "8.23.1",
+    "tweetnacl": "1.0.3"
+  },
+  "devDependencies": {
+    "@solana/web3.js": "^1.99.0",
+    "esbuild": "0.28.2"
+  },
+  "overrides": {
+    "jayson": "5.0.0",
+    "bigint-buffer": "npm:@trufflesuite/bigint-buffer@1.1.10"
+  }
+}
